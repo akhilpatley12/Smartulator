@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Percentage Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/percentage-calculator.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="mainTitle">Percentage Calculator</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" id="homeLink">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="calculator-container">
+            <h2 id="whatIsXPercentOfYTitle">What is X% of Y?</h2>
+            <label for="percent1" id="percent1Label">X (%):</label>
+            <input type="number" id="percent1" placeholder="Enter percentage">
+
+            <label for="num1" id="num1Label">Y (Number):</label>
+            <input type="number" id="num1" placeholder="Enter number">
+
+            <button onclick="calculatePercentage1()" id="calculateBtn1">Calculate</button>
+            <div id="result1">
+                <p id="percentageResult1Text">Result: <span id="percentageResult1"></span></p>
+            </div>
+            <button onclick="downloadPdf1()" id="downloadPdfBtn1">Download as PDF (X% of Y)</button>
+            <button onclick="shareResult1()" id="shareResultBtn1">Share Result (X% of Y)</button>
+
+            <hr>
+
+            <h2 id="xIsWhatPercentOfYTitle">X is what % of Y?</h2>
+            <label for="num2" id="num2Label">X (Number):</label>
+            <input type="number" id="num2" placeholder="Enter part">
+
+            <label for="num3" id="num3Label">Y (Total):</label>
+            <input type="number" id="num3" placeholder="Enter total">
+
+            <button onclick="calculatePercentage2()" id="calculateBtn2">Calculate</button>
+            <div id="result2">
+                <p id="percentageResult2Text">Result: <span id="percentageResult2"></span>%</p>
+            </div>
+            <button onclick="downloadPdf2()" id="downloadPdfBtn2">Download as PDF (X is what % of Y)</button>
+            <button onclick="shareResult2()" id="shareResultBtn2">Share Result (X is what % of Y)</button>
+
+            <hr>
+
+            <div class="customization-section">
+                <h2 id="customizeResultPageTitle">Customize Result Page</h2>
+                <label for="logoUpload" id="uploadLogoLabel">Upload Photo/Logo:</label>
+                <input type="file" id="logoUpload" accept="image/*">
+                <img id="uploadedLogo" src="" alt="Uploaded Logo" style="max-width: 100px; margin-top: 10px; display: none;">
+
+                <h3 id="editableLabelsTitle">Editable Labels (Click to edit)</h3>
+                <p><span class="editable-label" id="editablePageTitle" contenteditable="true">Percentage Calculator</span></p>
+                <p><span class="editable-label" id="editableMainTitle" contenteditable="true">Percentage Calculator</span></p>
+                <p><span class="editable-label" id="editableWhatIsXPercentOfYTitle" contenteditable="true">What is X% of Y?</span></p>
+                <p><span class="editable-label" id="editablePercent1Label" contenteditable="true">X (%):</span></p>
+                <p><span class="editable-label" id="editableNum1Label" contenteditable="true">Y (Number):</span></p>
+                <p><span class="editable-label" id="editablePercentageResult1Text" contenteditable="true">Result:</span></p>
+                <p><span class="editable-label" id="editableXIsWhatPercentOfYTitle" contenteditable="true">X is what % of Y?</span></p>
+                <p><span class="editable-label" id="editableNum2Label" contenteditable="true">X (Number):</span></p>
+                <p><span class="editable-label" id="editableNum3Label" contenteditable="true">Y (Total):</span></p>
+                <p><span class="editable-label" id="editablePercentageResult2Text" contenteditable="true">Result:</span></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p id="footerText">&copy; 2025 Multi-functional Calculator</p>
+    </footer>
+    <script src="js/percentage-calculator.js"></script>
+</body>
+</html>

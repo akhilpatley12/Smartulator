@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">BMI Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bmi-calculator.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="mainTitle">BMI Calculator</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" id="homeLink">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="calculator-container">
+            <label for="weight" id="weightLabel">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="Enter weight in kg">
+
+            <label for="height" id="heightLabel">Height (cm):</label>
+            <input type="number" id="height" placeholder="Enter height in cm">
+
+            <button onclick="calculateBMI()" id="calculateBmiBtn">Calculate BMI</button>
+
+            <div id="result">
+                <p id="bmiResultText">Your BMI is: <span id="bmiValue">0</span></p>
+                <p id="bmiStatusText">Status: <span id="bmiStatus"></span></p>
+            </div>
+            <button onclick="downloadPdf()" id="downloadPdfBtn">Download as PDF</button>
+            <button onclick="shareResult()" id="shareResultBtn">Share Result</button>
+
+            <hr>
+
+            <div class="customization-section">
+                <h2 id="customizeResultPageTitle">Customize Result Page</h2>
+                <label for="logoUpload" id="uploadLogoLabel">Upload Photo/Logo:</label>
+                <input type="file" id="logoUpload" accept="image/*">
+                <img id="uploadedLogo" src="" alt="Uploaded Logo" style="max-width: 100px; margin-top: 10px; display: none;">
+
+                <h3 id="editableLabelsTitle">Editable Labels (Click to edit)</h3>
+                <p><span class="editable-label" id="editablePageTitle" contenteditable="true">BMI Calculator</span></p>
+                <p><span class="editable-label" id="editableMainTitle" contenteditable="true">BMI Calculator</span></p>
+                <p><span class="editable-label" id="editableWeightLabel" contenteditable="true">Weight (kg):</span></p>
+                <p><span class="editable-label" id="editableHeightLabel" contenteditable="true">Height (cm):</span></p>
+                <p><span class="editable-label" id="editableBmiResultText" contenteditable="true">Your BMI is:</span></p>
+                <p><span class="editable-label" id="editableBmiStatusText" contenteditable="true">Status:</span></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p id="footerText">&copy; 2025 Multi-functional Calculator</p>
+    </footer>
+    <script src="js/bmi-calculator.js"></script>
+</body>
+</html>

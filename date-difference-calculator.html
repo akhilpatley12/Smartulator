@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Date Difference Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/date-difference-calculator.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="mainTitle">Date Difference Calculator</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" id="homeLink">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="calculator-container">
+            <label for="startDate" id="startDateLabel">Start Date:</label>
+            <input type="date" id="startDate">
+
+            <label for="endDate" id="endDateLabel">End Date:</label>
+            <input type="date" id="endDate">
+
+            <button onclick="calculateDateDifference()" id="calculateDiffBtn">Calculate Difference</button>
+
+            <div id="result">
+                <p id="diffResultText">Difference: <span id="diffYears">0</span> <span id="yearsUnit">years</span>, <span id="diffMonths">0</span> <span id="monthsUnit">months</span>, <span id="diffDays">0</span> <span id="daysUnit">days</span>.</p>
+                <p id="totalDaysText">Total Days: <span id="totalDays">0</span></p>
+            </div>
+            <button onclick="downloadPdf()" id="downloadPdfBtn">Download as PDF</button>
+            <button onclick="shareResult()" id="shareResultBtn">Share Result</button>
+
+            <hr>
+
+            <div class="customization-section">
+                <h2 id="customizeResultPageTitle">Customize Result Page</h2>
+                <label for="logoUpload" id="uploadLogoLabel">Upload Photo/Logo:</label>
+                <input type="file" id="logoUpload" accept="image/*">
+                <img id="uploadedLogo" src="" alt="Uploaded Logo" style="max-width: 100px; margin-top: 10px; display: none;">
+
+                <h3 id="editableLabelsTitle">Editable Labels (Click to edit)</h3>
+                <p><span class="editable-label" id="editablePageTitle" contenteditable="true">Date Difference Calculator</span></p>
+                <p><span class="editable-label" id="editableMainTitle" contenteditable="true">Date Difference Calculator</span></p>
+                <p><span class="editable-label" id="editableStartDateLabel" contenteditable="true">Start Date:</span></p>
+                <p><span class="editable-label" id="editableEndDateLabel" contenteditable="true">End Date:</span></p>
+                <p><span class="editable-label" id="editableDiffResultText" contenteditable="true">Difference:</span></p>
+                <p><span class="editable-label" id="editableTotalDaysText" contenteditable="true">Total Days:</span></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p id="footerText">&copy; 2025 Multi-functional Calculator</p>
+    </footer>
+    <script src="js/date-difference-calculator.js"></script>
+</body>
+</html>
